@@ -5,19 +5,24 @@ header,
 nav,
 section,
 article,
-footer {
+footer,
+form,
+textarea,
+input {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-color: #101935; /* Dark blue sky background */
+  color: #fff;
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: #0b2737; /* Dark blue header */
   padding: 20px;
   text-align: center;
 }
@@ -32,8 +37,7 @@ header p {
 }
 
 nav {
-  background-color: #444;
-  color: #fff;
+  background-color: #0b2737; /* Dark blue nav background */
   padding: 10px 0;
   text-align: center;
 }
@@ -50,21 +54,77 @@ section {
 }
 
 section h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: #70a4b2; /* Light blue heading */
 }
 
 article {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 article h3 {
   font-size: 1.3em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: #70a4b2; /* Light blue article heading */
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #0b2737; /* Dark blue footer */
   padding: 10px 0;
   text-align: center;
+}
+
+.contact {
+  padding: 20px;
+}
+
+.contact h3 {
+  margin-bottom: 10px;
+  color: #70a4b2; /* Light blue heading */
+}
+
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #2b4a5a; /* Dark blue input background */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.contact input[type='submit'] {
+  padding: 10px 20px;
+  background-color: #70a4b2; /* Light blue submit button */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact input[type='submit']:hover {
+  background-color: #507a8c; /* Darker hover color for submit button */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.gallery .image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery .image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.gallery .image:hover img {
+  transform: scale(1.1);
 }
