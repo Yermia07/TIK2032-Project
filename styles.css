@@ -22,6 +22,15 @@ header {
   text-align: center;
 }
 
+header h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
 nav {
   background-color: #444;
   color: #fff;
@@ -33,10 +42,24 @@ nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
+  font-size: 1.1em;
 }
 
 section {
   padding: 20px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+article h3 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
 }
 
 footer {
