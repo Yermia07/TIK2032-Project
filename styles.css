@@ -76,6 +76,23 @@ body {
     font-size: 1em;
   }
 }
+@media (max-width: 480px) {
+  .hero-content {
+    max-width: 80%;
+  }
+
+  .hero-image {
+    max-width: 150px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 0.8em;
+  }
+}
 
 header,
 nav,
