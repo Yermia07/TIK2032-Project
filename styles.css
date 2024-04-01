@@ -25,10 +25,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* Hero section styles */
+/* Header styles */
 .hero {
   position: relative;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   background-color: #101935; /* Dark blue background */
   color: #ffffff;
   text-align: center;
@@ -37,16 +37,25 @@ body {
   justify-content: center;
 }
 
-.hero-image {
-  width: 500px; /* Adjust the width as needed */
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 20px;
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 90%; /* Adjusted to ensure content fits within viewport */
   margin: 0 auto;
+}
+
+.hero-image {
+  width: 100%; /* Adjusted to fill the container width */
+  max-width: 300px; /* Max width for larger screens */
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -56,6 +65,16 @@ body {
 
 .hero p {
   font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
 }
 
 header,
