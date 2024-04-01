@@ -19,12 +19,75 @@ body {
   line-height: 1.6;
   background-color: #101935; /* Dark blue sky background */
   color: #fff;
+  background-image: linear-gradient(to bottom right, #101935, #0d2342);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Hero section styles */
+.hero {
+  position: relative;
+  height: 100vh; /* Adjust the height as needed */
+  background-color: #101935; /* Dark blue background */
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 500px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+header,
+nav,
+section,
+article,
+footer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 header {
   background-color: #0b2737; /* Dark blue header */
   padding: 20px;
   text-align: center;
+  animation: float 3s ease-in-out infinite;
 }
 
 header h1 {
@@ -35,11 +98,32 @@ header h1 {
 header p {
   font-size: 1.2em;
 }
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
 
 nav {
   background-color: #0b2737; /* Dark blue nav background */
   padding: 10px 0;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
@@ -47,6 +131,25 @@ nav a {
   text-decoration: none;
   margin: 0 10px;
   font-size: 1.1em;
+}
+nav a:hover {
+  color: #70a4b2;
+}
+nav a.active {
+  font-weight: bold;
+  font-size: larger;
+}
+a,
+button,
+input[type='submit'],
+.accordion-btn {
+  cursor: pointer;
+}
+
+h1:hover,
+h2:hover,
+h3:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 section {
@@ -56,6 +159,20 @@ section {
 section h2 {
   margin-bottom: 20px;
   color: #70a4b2; /* Light blue heading */
+}
+section,
+article,
+.skill-bar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #0b2b3c; /* Darker blue border */
+}
+article {
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
 }
 
 article {
@@ -67,11 +184,101 @@ article h3 {
   margin-bottom: 10px;
   color: #70a4b2; /* Light blue article heading */
 }
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #2b4a5a;
+  border: 1px solid #70a4b2; /* Light blue border */
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* Style submit button in the contact form */
+input[type='submit'] {
+  display: block;
+}
 
 footer {
   background-color: #0b2737; /* Dark blue footer */
   padding: 10px 0;
   text-align: center;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+section,
+article {
+  animation: fadeIn 1s ease;
+}
+
+.skills {
+  margin-top: 40px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #4caf50; /* Green */
+  border-radius: 5px;
+}
+
+.skill-level {
+  width: 0;
+}
+
+/* Add animation to skill bars */
+.skill-level {
+  animation: fillSkill 1s ease-in-out forwards;
+}
+
+@keyframes fillSkill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--skill-level);
+  }
+}
+
+.case-studies {
+  margin-top: 40px;
+}
+
+.case-study {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.case-study h3 {
+  margin-bottom: 10px;
+}
+
+.case-study p {
+  margin-bottom: 5px;
 }
 
 .contact {
@@ -107,6 +314,36 @@ footer {
   background-color: #507a8c; /* Darker hover color for submit button */
 }
 
+.social-media {
+  margin-bottom: 20px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+}
+.social-media img {
+  filter: brightness(0) invert(1);
+}
+
+.social-media img {
+  width: 100%;
+  height: 100%;
+}
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.2);
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -118,6 +355,9 @@ footer {
   overflow: hidden;
   border-radius: 10px;
 }
+.image {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 
 .gallery .image img {
   width: 100%;
@@ -127,4 +367,36 @@ footer {
 
 .gallery .image:hover img {
   transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+::selection {
+  background-color: #70a4b2; /* Light blue */
+}
+
+button,
+input[type='submit'] {
+  transition: transform 0.3s ease;
+}
+
+button:hover,
+input[type='submit']:hover {
+  transform: scale(1.1);
+}
+
+.loading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 5px solid #70a4b2;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
