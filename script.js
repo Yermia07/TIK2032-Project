@@ -100,3 +100,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   type(); // Start the typing effect
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% of the element is in view
+    }
+  );
+
+  // Select all elements you want to animate
+  const elementsToAnimate = document.querySelectorAll('.animated');
+  elementsToAnimate.forEach((element) => {
+    observer.observe(element);
+  });
+});
