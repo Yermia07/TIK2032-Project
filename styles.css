@@ -474,3 +474,19 @@ input[type='submit']:hover {
     border-color: transparent;
   }
 }
+
+/* Base animation styles */
+.animated {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Specific animation styles */
+.fadeInUp {
+  transform: translateY(20px);
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
