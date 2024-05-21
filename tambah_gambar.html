@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Image</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form action="upload_gambar.php" method="post" enctype="multipart/form-data">
+      <label for="image">Select image:</label>
+      <input type="file" id="image" name="image" required />
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="2" required></textarea>
+      <input type="submit" value="Upload Image" name="submit" />
+    </form>
+  </body>
+</html>

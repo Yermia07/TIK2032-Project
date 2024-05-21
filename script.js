@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const images = document.querySelectorAll('.gallery img');
   const lightbox = document.createElement('div');
   lightbox.id = 'lightbox';
+  lightbox.style.zIndex = 3000;
   document.body.appendChild(lightbox);
 
   images.forEach((image) => {
@@ -241,4 +242,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   init();
   animate();
+});
+
+document.addEventListener('scroll', function () {
+  const offset = window.pageYOffset;
+  document.querySelector('.parallax-background').style.backgroundPositionY = offset * 0.5 + 'px';
 });
